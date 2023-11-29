@@ -3,25 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>You lost bbg ?</title>
 </head>
 <body>
-    <h1>Welcome to My Website!</h1>
+    <h1>You're in my basement now !</h1>
 
     <form>
         <label for="userInput">Enter your name:</label>
         <input type="text" id="userInput" name="userInput" required>
+    
+        <label for="gender">Select your gender:</label>
+        <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="dmart cover">Dmart_cover</option>
+            <option value="manchuria">Manchuria</option>
+            <option value="gay/rama">Gay/Rama</option>
+        </select>
+    
         <button type="button" onclick="displayGreeting()">Submit</button>
     </form>
+    
 
     <div id="greeting"></div>
 
     <script>
         function displayGreeting() {
             var userInput = document.getElementById('userInput').value;
+            var selectedGender = document.getElementById('gender').value;
             var greetingDiv = document.getElementById('greeting');
-            greetingDiv.innerHTML = 'Hi ' + userInput + '!';
+    
+            var genderText = selectedGender === 'other' ? '' : ' ' + selectedGender;
+    
+            greetingDiv.innerHTML = 'Hello ' + userInput + '!' ;
+            greetingDiv.innerHTML = 'You  registered gender is ' + selectedGender + '!' ;
+
+            if (selectedGender === 'gay/rama') {
+                greetingDiv.innerHTML = 'Hi ' + userInput + '! ' + 'you are 🏳️‍🌈🏳️‍🌈🏳️‍🌈🏳️‍🌈🏳️‍🌈🏳️‍🌈🏳️‍🌈';
+            } else {
+                greetingDiv.innerHTML = 'Hi ' + userInput + '!' + ' You identified as ' + selectedGender + '.';
+            }
+
         }
     </script>
+    
 </body>
 </html>

@@ -10,15 +10,23 @@
 
     <form>
         <label for="userInput">Enter your name:</label>
-        <input type="text" id="userInput" name="userInput" required>
+        <select id="userInput" name="userInput">
+            <option value="" selected disabled>Select your name</option>
+            <option value="Vaishu">Vaishu</option>
+            <option value="Kavya">Kavya</option>
+            <option value="Rama">rama</option>
+            <option value="tarun">tarun</option>
+            <option value="Prenith">prenith</option>
+            <option value="Sathwik">sathwik</option>
+        </select>
     
         <label for="gender">Select your gender:</label>
         <select id="gender" name="gender">
+            <option value="" selected disabled>Select gender</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
-            <option value="dmart cover">Dmart_cover</option>
-            <option value="manchuria">Manchuria</option>
-            <option value="gay/rama">Gay/Rama</option>
+            <option value="other">other</option>
+            
         </select>
     
         <button type="button" onclick="displayGreeting()">Submit</button>
@@ -35,19 +43,23 @@
     
             var genderText = selectedGender === 'other' ? '' : ' ' + selectedGender;
     
-            greetingDiv.innerHTML = 'Hello ' + userInput + '!' ;
-            greetingDiv.innerHTML = 'You  registered gender is ' + selectedGender + '!' ;
-
-            if (selectedGender === 'gay/rama') {
-                greetingDiv.innerHTML = 'Hi ' + userInput + '! ' + 'you are 🏳️‍🌈🏳️‍🌈🏳️‍🌈🏳️‍🌈🏳️‍🌈🏳️‍🌈🏳️‍🌈';
-            } else {
-                greetingDiv.innerHTML = 'Hi ' + userInput + '!' + ' You identified as ' + selectedGender + '.';
-            }
             
+
             if (userInput === 'tarun') {
-                greetingDiv.innerHTML = 'Hi ' + userInput + '! ' + 'you are Man 🗿';
-            } else {
-                greetingDiv.innerHTML = 'Hi ' + userInput + '!' + ' You identified as ' + selectedGender + '.';
+                if(selectedGender === 'female'){
+                    greetingDiv.innerHTML = 'Tarun is a Man 🗿';
+                }
+                else if(selectedGender === 'male'){
+                    greetingDiv.innerHTML = 'Hello ' + userInput + '! ' ;
+                    greetingDiv.innerHTML = 'Hello ' + userInput + ' ! ' + ' Your registered gender is ' + selectedGender + '!' ;
+                }
+                else if(selectedGender === 'other'){
+                    greetingDiv.innerHTML = 'Tarun is a Man 🗿';
+                }
+                
+            }else{
+                greetingDiv.innerHTML = 'Hello ' + userInput + ' ! ' + ' Your registered gender is ' + selectedGender + '!' ;
+                
             }
 
         }

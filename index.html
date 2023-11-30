@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>You lost bbg ?</title>
 </head>
+
 <body>
     <h1>You're in my basement now !</h1>
 
@@ -19,19 +21,19 @@
             <option value="Prenith">prenith</option>
             <option value="Sathwik">sathwik</option>
         </select>
-    
+
         <label for="gender">Select your gender:</label>
         <select id="gender" name="gender">
             <option value="" selected disabled>Select gender</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
             <option value="other">other</option>
-            
+
         </select>
-    
+
         <button type="button" onclick="displayGreeting()">Submit</button>
     </form>
-    
+
 
     <div id="greeting"></div>
 
@@ -40,30 +42,31 @@
             var userInput = document.getElementById('userInput').value;
             var selectedGender = document.getElementById('gender').value;
             var greetingDiv = document.getElementById('greeting');
-    
+
             var genderText = selectedGender === 'other' ? '' : ' ' + selectedGender;
-    
-            
+
+
 
             if (userInput === 'tarun') {
-                if(selectedGender === 'female'){
+                if (selectedGender === 'female') {
+                    greetingDiv.innerHTML = 'Tarun is a Man 🗿';
+                } else if (selectedGender === 'male') {
+                    greetingDiv.innerHTML = 'Hello ' + userInput + '! ';
+                    greetingDiv.innerHTML = 'Hello ' + userInput + ' ! ' + ' Your registered gender is ' +
+                        selectedGender + '!';
+                } else if (selectedGender === 'other') {
                     greetingDiv.innerHTML = 'Tarun is a Man 🗿';
                 }
-                else if(selectedGender === 'male'){
-                    greetingDiv.innerHTML = 'Hello ' + userInput + '! ' ;
-                    greetingDiv.innerHTML = 'Hello ' + userInput + ' ! ' + ' Your registered gender is ' + selectedGender + '!' ;
-                }
-                else if(selectedGender === 'other'){
-                    greetingDiv.innerHTML = 'Tarun is a Man 🗿';
-                }
-                
-            }else{
-                greetingDiv.innerHTML = 'Hello ' + userInput + ' ! ' + ' Your registered gender is ' + selectedGender + '!' ;
-                
+
+            } else {
+                greetingDiv.innerHTML = 'Hello ' + userInput + ' ! ' + ' Your registered gender is ' + selectedGender +
+                    '!';
+
             }
 
         }
     </script>
-    
+
 </body>
+
 </html>
